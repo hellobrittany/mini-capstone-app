@@ -50,7 +50,33 @@ product.save
 product = Product.new(
 											name: "Viognier", 
 											image: "http://f1.wine-searcher.net/images/labels/17/65/jorian-hill-viognier-santa-barbara-county-usa-10151765.jpg", 
-											description: "is a white wine grape variety. It is the only permitted grape for the French wine Condrieu in the Rhône Valley. ... Like Chardonnay, Viognier has the potential to produce full-bodied wines with a lush, soft character.", 
+											description: "A white wine grape variety. It is the only permitted grape for the French wine Condrieu in the Rhône Valley. ... Like Chardonnay, Viognier has the potential to produce full-bodied wines with a lush, soft character.", 
 											price: 25
 											)
 product.save
+
+product = Product.new(
+											name: "Chardonnay", 
+											image: "http://biltmore.s3.amazonaws.com/1256/biltmoreestate-chardonnay.jpg", 
+											description: "Often wider-bodied (and more velvety) than other types of dry whites, with rich citrus (lemon, grapefruit) flavors. Fermenting in new oak barrels adds a buttery tone (vanilla, toast, coconut, toffee).", 
+											price: 15
+											)
+product.save
+
+product = Product.new(
+											name: "Tempranillo", 
+											image: "https://img.washingtonpost.com/rf/image_480w/2010-2019/WashingtonPost/2011/06/23/Food/Images/food002_1308871080.jpg?uuid=MnL_FJ3vEeCMAJKPmHKN9g", 
+											description: "When you first taste a Spanish Tempranillo you'll get hit with the flavor of leather along with cherries. The finish is mild, smooth and lingers with tannin on both sides of your mouth. American and other New World Tempranillo delivers tons of cherry and tomato-sauce flavors followed by chunky tannin.", 
+											price: 32
+											)
+product.save
+
+product = Product.new(
+											name: "Super Tuscan", 
+											image: "http://winefolly.com/wp-content/uploads/2014/05/Tenuta-Luce-Della-Vite_Lucente_Super-Tuscan-Wine.jpg", 
+											description: "is a term used to describe red wines from Tuscany that may include the use of non-indigenous grapes, particularly Merlot, Cabernet Sauvignon and Syrah", 
+											price: 40
+											)
+product.save
+
+

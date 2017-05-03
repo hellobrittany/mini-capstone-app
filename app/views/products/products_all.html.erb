@@ -1,0 +1,14 @@
+<h1>We offer a variety of wines from across the globe!</h1>
+
+
+<h1>Wines:</h1>
+
+<%= @products.each do |product| %> 				
+	
+	<h2>Name: <%= product.name %></h2>
+	<img src= <%= product.image %>>
+	<h2>Description: <%= product.description %></h2>
+	<h2>Price: $<%= product.price %></h2>
+	<br>
+
+<% end %>
