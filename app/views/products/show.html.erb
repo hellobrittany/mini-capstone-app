@@ -3,3 +3,6 @@
 	<h2>Description: <%= @product.description %></h2>
 	<h2>Price: $<%= @product.price %></h2>
 	<br>
+
+<%= link_to "Edit Product", "/products/#{@product.id}/edit" %>
+<%= link_to "Delete", "/products/#{ @product.id}", method: :delete %>
