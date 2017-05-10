@@ -1,15 +1,22 @@
-<a href="/">Home</a>
+
 <h1>We offer a variety of wines from across the globe!</h1>
 
 
 <h1>Wines:</h1>
 
-<% @products.each do |product| %> 				
+<div class='row'>
+		
+	<% @products.each do |product| %> 				
+		<div class='col-md-4'>
+			<div class="thumbnail well">
+						
+				<h2><a href= '/products/<%= product.id %>'> Name: <%= product.name %> </a></h2>
+				<img src= <%= product.image %>> 
+				<h2>Description: <%= product.description %></h2>
+				<h2>Price: $<%= product.price %></h2>
+				<br>
+			</div>
+		</div>
 	
-	<h2><a href= '/products/<%= product.id %>'> Name: <%= product.name %> </a></h2>
-	<img src= <%= product.image %>> 
-	<h2>Description: <%= product.description %></h2>
-	<h2>Price: $<%= product.price %></h2>
-	<br>
-
-<% end %>
+	<% end %>
+</div>
