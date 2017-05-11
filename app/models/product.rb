@@ -1,8 +1,6 @@
 class Product < ApplicationRecord
 	def sale_message
-		# If an item is under $2, it returns the string “Discount Item!” - otherwise, it should return the string “Everyday Value!!” Then, have this message appear on the product’s show page.
-
-		if price < 15 
+		if discounted? 
 			 "Discount Item!"
 		else
 			 "Everyday Value!!"	
@@ -16,5 +14,9 @@ class Product < ApplicationRecord
 
 	def total_cost
 		price + tax
+	end
+
+	def discounted?
+		price < 15 
 	end
 end
