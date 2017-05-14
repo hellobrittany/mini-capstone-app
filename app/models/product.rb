@@ -1,4 +1,7 @@
 class Product < ApplicationRecord
+
+	
+
 	def sale_message
 		if discounted? 
 			 "Discount Item!"
@@ -17,6 +20,10 @@ class Product < ApplicationRecord
 	end
 
 	def discounted?
-		price < 15 
+		price < 15
+	end
+
+	def in_stock?
+		
 	end
 end
