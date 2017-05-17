@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
 	belongs_to :supplier
+	has_many :images
 	
 
 	def sale_message
@@ -25,5 +26,14 @@ class Product < ApplicationRecord
 
 	def in_stock?
 		
+	end
+
+	def first_image_url
+		image_collection = images
+		if image_collection.length == 0
+			"some-image"
+		else	
+			image_collection.first.url
+		end	
 	end
 end

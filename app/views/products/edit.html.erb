@@ -11,6 +11,8 @@
 	</div><div>
 		Price: <input type="text" name="price" value="<%= @product.price %>">
 	</div>
+	<div><h2>Supplier: <%= collection_select :supplier, :supplier_id, Supplier.all, :id, :name %></h2></div>
+	
 
 	<input type="Submit" value="Edit Product">
 

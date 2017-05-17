@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
 		sort_order = params[:sort_order]
 		discount = params[:discount]
 		search_term = params[:search_term]
+		
 		if search_term
 			@products = Product.where(
 																"name iLike ? OR description iLIKE ?",
@@ -34,9 +35,9 @@ class ProductsController < ApplicationController
 	def create
 		product =	Product.new(
 												name: params[:name], 
-												image: params[:image], 
 												description: params[:description], 
-												price: params[:price] 
+												price: params[:price], 
+												supplier_id: params[:supplier][:supplier_id]
 												)
 		product.save
 
@@ -52,9 +53,10 @@ class ProductsController < ApplicationController
 	product = Product.find(params[:id])
 		product.assign_attributes(
 															name: params[:name], 
-															image: params[:image], 
+															
 															description: params[:description], 
-															price: params[:price])
+															price: params[:price], 
+															supplier_id: params[:supplier][:supplier_id])
 		product.save
 		flash[:success] = "Product successfully updated"
 		redirect_to "/products/#{product.id}"
