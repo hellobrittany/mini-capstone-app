@@ -1,0 +1,12 @@
+<h1>YOU BOUGHT WINE!!</h1>
+
+<h3>Your order of <%= @order.quantity %> bottles of wine has been successfully created.  Your confirmation id is <%= @order.id %></h3>
+
+
+<img src="<%= @order.product.first_image_url %>">
+
+<h4>Subtotal: <%= @order.subtotal %></h4>
+<h4>Tax: <%= @order.tax %></h4>
+<h4>Total: <%= @order.total %></h4>
+
+<h3>You should recieve a confirmation email shortly to <%= current_user.email %></h3>
