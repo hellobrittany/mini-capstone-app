@@ -4,9 +4,10 @@
 
 
 <img src="<%= @order.product.first_image_url %>">
-
-<h4>Subtotal: <%= @order.subtotal %></h4>
-<h4>Tax: <%= @order.tax %></h4>
-<h4>Total: <%= @order.total %></h4>
+<h4>Wine: <%= @order.product.name %></h4>
+<h4>Price: <%= number_to_currency(@order.product.price)%></h4>
+<h4>Subtotal: <%= number_to_currency(@order.subtotal) %></h4>
+<h4>Tax: <%= number_to_currency(@order.tax) %></h4>
+<h4>Total: <%=number_to_currency(@order.total) %></h4>
 
 <h3>You should recieve a confirmation email shortly to <%= current_user.email %></h3>

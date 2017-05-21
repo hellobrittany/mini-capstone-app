@@ -78,44 +78,66 @@
 # 											)
 # product.save
 
-Image.create!([
-								{ 
-									name: "Tempranillo",
-									url: "https://img.washingtonpost.com/rf/image_480w/2010-2019/WashingtonPost/2011/06/23/Food/Images/food002_1308871080.jpg?uuid=MnL_FJ3vEeCMAJKPmHKN9g", 
-									product_id: 14
-								}, {
-									name: "Pinot Grigio",
-									url: "http://www.tizianowine.com/wp-content/uploads/2015/10/tiziano-pinot-grigio.jpg", 
-									product_id: 2
-									}, {
-									name: "Pinot Noir",
-									url: "http://www.totalwine.com/media/sys_master/twmmedia/hcf/h99/10027530027038.png", 
-									product_id: 3
-								}, {
-									name: "Sangiovese",
-									url: "http://www.glenora.com/assets/images/products/large/250x450JPEG_2711SagioveseNoBackground159.jpg", 
-									product_id: 5
-								}, {
-									name: "Viognier",
-									url: "http://f1.wine-searcher.net/images/labels/17/65/jorian-hill-viognier-santa-barbara-county-usa-10151765.jpg", 
-									product_id: 6
-								}, {
-									name: "Super Tuscan",
-									url: "http://winefolly.com/wp-content/uploads/2014/05/Tenuta-Luce-Della-Vite_Lucente_Super-Tuscan-Wine.jpg", 
-									product_id: 15
-								}, {
-									name: "Malbec",
-									url: "http://www.totalwine.com/media/sys_master/twmmedia/h40/hec/9382840664094.png", 
-									product_id: 4
-								}, {
-									name: "Chardonnay",
-									url: "http://biltmore.s3.amazonaws.com/1256/biltmoreestate-chardonnay.jpg", 
-									product_id: 13
-								}
-								# {
-								# 	name: "Sauvignon Blanc", 
-								# 	url: "https://www.masoncellars.com/assets/easyimage/4/4b33eaa150f94f3b6f169e68d716ff6b.png"
+# Image.create!([
+# 								{ 
+# 									name: "Tempranillo",
+# 									url: "https://img.washingtonpost.com/rf/image_480w/2010-2019/WashingtonPost/2011/06/23/Food/Images/food002_1308871080.jpg?uuid=MnL_FJ3vEeCMAJKPmHKN9g", 
+# 									product_id: 14
+# 								}, {
+# 									name: "Pinot Grigio",
+# 									url: "http://www.tizianowine.com/wp-content/uploads/2015/10/tiziano-pinot-grigio.jpg", 
+# 									product_id: 2
+# 									}, {
+# 									name: "Pinot Noir",
+# 									url: "http://www.totalwine.com/media/sys_master/twmmedia/hcf/h99/10027530027038.png", 
+# 									product_id: 3
+# 								}, {
+# 									name: "Sangiovese",
+# 									url: "http://www.glenora.com/assets/images/products/large/250x450JPEG_2711SagioveseNoBackground159.jpg", 
+# 									product_id: 5
+# 								}, {
+# 									name: "Viognier",
+# 									url: "http://f1.wine-searcher.net/images/labels/17/65/jorian-hill-viognier-santa-barbara-county-usa-10151765.jpg", 
+# 									product_id: 6
+# 								}, {
+# 									name: "Super Tuscan",
+# 									url: "http://winefolly.com/wp-content/uploads/2014/05/Tenuta-Luce-Della-Vite_Lucente_Super-Tuscan-Wine.jpg", 
+# 									product_id: 15
+# 								}, {
+# 									name: "Malbec",
+# 									url: "http://www.totalwine.com/media/sys_master/twmmedia/h40/hec/9382840664094.png", 
+# 									product_id: 4
+# 								}, {
+# 									name: "Chardonnay",
+# 									url: "http://biltmore.s3.amazonaws.com/1256/biltmoreestate-chardonnay.jpg", 
+# 									product_id: 13
+# 								}
+# 								# {
+# 								# 	name: "Sauvignon Blanc", 
+# 								# 	url: "https://www.masoncellars.com/assets/easyimage/4/4b33eaa150f94f3b6f169e68d716ff6b.png"
 									 
-								# }
+# 								# }
 
-	])
+# 	])
+
+
+# 1 expensive
+# 2 white
+# 3 red
+
+
+CategoryProduct.create!([
+												{category_id: 1 , product_id: 14},
+												{category_id: 1 , product_id: 15},
+												{category_id: 1 , product_id: 5},
+												{category_id: 2 , product_id: 2},
+												{category_id: 2 , product_id: 6},
+												{category_id: 2 , product_id: 13},
+												{category_id: 3 , product_id: 14},
+												{category_id: 3 , product_id: 4},
+												{category_id: 3 , product_id: 5},
+												{category_id: 3 , product_id: 5},
+												{category_id: 3 , product_id: 15},
+												{category_id: 3 , product_id: 3}
+
+												])
