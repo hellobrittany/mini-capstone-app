@@ -16,7 +16,11 @@
 	<h3> <%= @product.sale_message %> </h3>
 	<br>
 
-	<h5> <%= @product.supplier.name %></h5>
+	<h4> Supplier: <%= @product.supplier.name %></h4>
+
+		<h4> Categories: <%= @product.stringify_categories %></h4>
+	
+		
 
 	<h3>Drink Up!</h3>
 

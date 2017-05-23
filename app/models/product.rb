@@ -39,4 +39,8 @@ class Product < ApplicationRecord
 			image_collection.first.url
 		end	
 	end
+
+	def stringify_categories
+		categories.map { |category| category.name.titleize }.join(", ")
+	end
 end
