@@ -24,7 +24,7 @@
 
 	<h3>Drink Up!</h3>
 
-	<%= form_tag "/orders", method: :post do %>
+	<%= form_tag "/carted_products", method: :post do %>
 			<div>
 				
 				<%= text_field_tag :quantity, nil, placeholder: "Quantity" %>
@@ -35,7 +35,7 @@
 			
 			
 
-			<div> <%= submit_tag "Buy Now!!", class: "btn btn-primary"%> </div>
+			<div> <%= submit_tag "Add to Cart!!", class: "btn btn-primary"%> </div>
 	<% end %>
 	
 

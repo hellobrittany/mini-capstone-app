@@ -1,0 +1,8 @@
+<h1>Checkout</h1>
+<% @carted_products.each do |carted_product| %>
+	<div>Name: <%= carted_product.product.name %></div>
+	
+	<div>Quantity: <%= carted_product.quantity%></div>
+	<br>
+	
+<% end %>	
