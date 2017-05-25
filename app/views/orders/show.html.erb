@@ -1,13 +1,11 @@
 <h1>YOU BOUGHT WINE!!</h1>
 
-<h3>Your order of <%= @order.quantity %> bottles of wine has been successfully created.  Your confirmation id is <%= @order.id %></h3>
+<!-- <h2><%= @order.product.name %></h2>
+<h2><%= @order.subtotal %></h2>
+<h2><%= @order.tax %></h2>
+<h2><%= @order.total %></h2> -->
+<div class="well">
+<% @order.carted_products.each do |carted_product| %>
+	<div>Name: <%= carted_product.product.name %> - <%= carted_product.product.price%> X <%= carted_product.quantity%></div>
 
-
-<img src="<%= @order.product.first_image_url %>">
-<h4>Wine: <%= @order.product.name %></h4>
-<h4>Price: <%= number_to_currency(@order.product.price)%></h4>
-<h4>Subtotal: <%= number_to_currency(@order.subtotal) %></h4>
-<h4>Tax: <%= number_to_currency(@order.tax) %></h4>
-<h4>Total: <%=number_to_currency(@order.total) %></h4>
-
-<h3>You should recieve a confirmation email shortly to <%= current_user.email %></h3>
+<% end %>	</div>

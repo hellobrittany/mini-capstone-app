@@ -1,8 +1,14 @@
 <h1>Checkout</h1>
 <% @carted_products.each do |carted_product| %>
-	<div>Name: <%= carted_product.product.name %></div>
-	
-	<div>Quantity: <%= carted_product.quantity%></div>
-	<br>
-	
+	<div>Name: <%= carted_product.product.name %> - <%= number_to_currency(carted_product.product.price)%> X <%= carted_product.quantity%> - <%= link_to "remove", "/carted_products/#{carted_product.id}" method: :delete %></div>
+	<br>	
 <% end %>	
+
+<%= form_tag "/orders", method: :post do %>
+			<div>
+				
+				<%= hidden_field_tag :user_id, @current_user.id %>
+			</div>
+		
+			<div> <%= submit_tag "Add to Cart!!", class: "btn btn-primary"%> </div>
+	<% end %>
