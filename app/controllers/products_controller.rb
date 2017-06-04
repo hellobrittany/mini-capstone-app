@@ -1,5 +1,8 @@
 class ProductsController < ApplicationController
+	before_action :authenticate_admin!, except: [:index, :show, :random]
+	
 	def index
+
 		@products = Product.all 
 		sort_attribute = params[:sort]
 		sort_order = params[:sort_order]
@@ -34,7 +37,8 @@ class ProductsController < ApplicationController
 	end
 
 	def new
-		
+			@product = Product.new
+			
 	end
 
 	def create
@@ -44,35 +48,47 @@ class ProductsController < ApplicationController
 												price: params[:price], 
 												supplier_id: params[:supplier][:supplier_id]
 												)
-		product.save
-
-		flash[:success] = "Product Successfully Created"
-		redirect_to "/products/#{product.id}"
+		if product.save
+			flash[:success] = "Product Successfully Created"
+			redirect_to "/products/#{product.id}"
+		else
+			render 'new.html.erb'
+		end	
 	end
 
 	def edit
-		@product = Product.find(params[:id])
+		
+			@product = Product.find(params[:id])
+		
 	end
 
 	def update
-	product = Product.find(params[:id])
-		product.assign_attributes(
-															name: params[:name], 
-															
-															description: params[:description], 
-															price: params[:price], 
-															supplier_id: params[:supplier][:supplier_id])
-		product.save
-		flash[:success] = "Product successfully updated"
-		redirect_to "/products/#{product.id}"
+	
+		
+			product = Product.find(params[:id])
+			product.assign_attributes(
+																name: params[:name], 
+																
+																description: params[:description], 
+																price: params[:price], 
+																supplier_id: params[:supplier][:supplier_id])
+			if product.save
+				flash[:success] = "Product successfully updated"
+				redirect_to "/products/#{product.id}"
+			else
+				render 'update.html.erb'	
+			end	
+		
 	end
 
 	def destroy
-		product = Product.find(params[:id])
-		product.destroy
+		
+			product = Product.find(params[:id])
+			product.destroy
 
-		flash[:warning] = "Product destroyed"
-		redirect_to "/"
+			flash[:warning] = "Product destroyed"
+			redirect_to "/"
+		
 	end
 
 	def random

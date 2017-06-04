@@ -38,6 +38,7 @@
 			<div> <%= submit_tag "Add to Cart!!", class: "btn btn-primary"%> </div>
 	<% end %>
 	
-
-<%= link_to "Edit Product", "/products/#{@product.id}/edit" %>
-<%= link_to "Delete", "/products/#{ @product.id}", method: :delete %>
+<% if admin_signed_in? %>
+	<%= link_to "Edit Product", "/products/#{@product.id}/edit" %>
+	<%= link_to "Delete", "/products/#{ @product.id}", method: :delete %>
+<% end %>

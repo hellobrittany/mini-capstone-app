@@ -1,11 +1,13 @@
 <h1>YOU BOUGHT WINE!!</h1>
 
-<!-- <h2><%= @order.product.name %></h2>
-<h2><%= @order.subtotal %></h2>
-<h2><%= @order.tax %></h2>
-<h2><%= @order.total %></h2> -->
 <div class="well">
-<% @order.carted_products.each do |carted_product| %>
-	<div>Name: <%= carted_product.product.name %> - <%= carted_product.product.price%> X <%= carted_product.quantity%></div>
+  <h2>Order #: 57600<%= @order.id %></h2>
 
-<% end %>	</div>
+  <% @order.carted_products.each do |carted_product| %>
+    <h3><%= carted_product.product.name %> - <%= number_to_currency(carted_product.product.price) %> X <%= carted_product.quantity %></h3>
+  <% end %>
+
+  <h3>Subtotal: <%= number_to_currency(@order.subtotal) %></h3>
+  <h3>Tax: <%= number_to_currency(@order.tax) %></h3>
+  <h3>Total: <%= number_to_currency(@order.total) %></h3>
+</div>

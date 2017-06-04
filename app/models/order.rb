@@ -5,15 +5,15 @@ class Order < ApplicationRecord
 	has_many :carted_products
 	has_many :products, through: :carted_products 
 
-	# def calculate_subtotal
-	# 	self.subtotal = product.price * quantity
-	# end
+	def calculate_totals
+		subtotal_sum = 0
+		carted_products.each do |carted_product|
+			subtotal_sum += carted_product.subtotal
+		end
 
-	# def calculate_tax
-	# 	self.tax = subtotal * 0.09
-	# end
-
-	# def calculate_total
-	# 	self.total = subtotal + tax
-	# end
+		self.subtotal = subtotal_sum
+		self.tax = subtotal * 0.09
+		self.total = subtotal + tax
+		save
+	end
 end
